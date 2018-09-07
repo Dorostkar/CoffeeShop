@@ -1,0 +1,52 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{meta-title}} | Foundation for Sites</title>
+  <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
+<body class="{{page}} {{layout}}">
+  <header class="site-header">
+    <div class="container">
+      <div class="header-container">
+        <div class="top-section">
+          <div class="logo">
+            <img src="assets/img/logo.svg" alt="coffeeshop logo">
+          </div>
+          <div class="menus">
+
+            <nav class="social-menu">
+              <a href="http://facebook.com">Facebook</a>
+              <a href="http://Twitter.com">Twitter</a>
+              <a href="http://Instagram.com">Instagram</a>
+              <a href="http://Youtube.com">Youtube</a>
+            </nav>
+
+            <ul id="main-nav" class="main-navigation">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Process</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom-section">
+            <h1 class="slogan">{{slogan}}</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  {{> body}}
+  <footer class="site-footer"></footer>
+  <script src="{{root}}assets/js/app.js"></script>
+</body>
+
+</html>

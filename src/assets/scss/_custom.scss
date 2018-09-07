@@ -1,0 +1,78 @@
+//Fade Effect mixin 
+@mixin faded_black {
+    background: linear-gradient(to bottom,rgba(0,0,0,.7) 20%,rgba(0,0,0,.3));
+}
+
+//Belefair Font
+$bellefair: 'Bellefair', serif;
+
+.container {
+    @include xy-grid-container();
+}
+
+.site-header {
+    background-size: cover;
+    background-image: url(../img/featured/small/home.jpg);
+    height: 100vh;
+    position: relative; //in order to add faded background on top 
+    @include breakpoint(medium) {
+        background-image: url(../img/featured/medium/home.jpg);
+    }
+    @include breakpoint(large) {
+        background-image: url(../img/featured/large/home.jpg);
+    }
+
+    .header-container {
+        .top-section {
+            position: relative;
+            z-index: 1;
+            @include xy-grid();
+            @include flex-align(center,top);
+            .logo {
+                @include xy-cell(6);
+                @include breakpoint(medium) {
+                    @include xy-cell(25%);
+                }
+            }
+            .menus {
+                @include xy-cell();
+                @include breakpoint(medium) {
+                    @include xy-cell(75%);
+                }
+
+                .main-navigation{
+                    @include menu-base();
+                    @include flex-align(right, middle);
+
+                    li{
+                        a{
+                            font-size: rem-calc(14);
+                            @include text-transform(uppercase);
+                            @include font-bold(700);
+                        }
+                    }
+                }
+            }
+        }
+        .bottom-section {
+            .slogan{
+                position: relative;
+                z-index: 1;
+                // font-weight: 900;
+                // text-transform: uppercase;
+                color:$white;
+                text-align: center;
+                @include font-bold(900);
+                @include text-transform(uppercase);
+                
+
+            }
+        }
+    }
+    &:after{
+        content:'';
+        @include faded_black();
+        @include position(absolute,0 ,0 ,0 ,0 );
+        @include box(100%,100%)
+    }
+}
